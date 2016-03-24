@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!--
+  This file contains some false positive bugs detected by Findbugs. Their
+  false positive nature has been analyzed individually and they have been
+  put here to instruct Findbugs it must ignore them.
+-->
+<FindBugsFilter>
+    <Match>
+        <Bug pattern="SE_NO_SERIALVERSIONID"/>
+    </Match>
+
+    <Match>
+        <Bug pattern="MS_SHOULD_BE_FINAL"/>
+    </Match>
+
+    <Match>
+        <Bug pattern="SE_BAD_FIELD"/>
+    </Match>
+</FindBugsFilter>

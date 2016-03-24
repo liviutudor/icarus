@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.1//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
+
+<module name="Checker">
+    <property name="localeLanguage" value="en"/>
+    <module name="TreeWalker">
+        <module name="RedundantImport"/>
+
+        <!-- Adhere to generally accepted naming conventions -->
+        <module name="PackageName">
+            <!-- no uppercase letters, between 2 and 10 characters -->
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]{1,18})*$"/>
+        </module>
+        <module name="TypeName"/>
+        <module name="LocalFinalVariableName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+
+
+        <module name="AnonInnerLength">
+            <property name="max" value="40"/>
+        </module>
+        <module name="BooleanExpressionComplexity">
+            <property name="max" value="5"/>
+        </module>
+        <module name="CovariantEquals"/>
+<!--        <module name="DesignForExtension"/> -->
+        <module name="EqualsAvoidNull">
+            <property name="ignoreEqualsIgnoreCase" value="false"/>
+        </module>
+        <module name="EqualsHashCode"/>
+        <module name="FallThrough"/>
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" value="true"/>
+            <property name="ignoreSetter" value="true"/>
+        </module>
+        <module name="HideUtilityClassConstructor"/>
+        <module name="IllegalInstantiation">
+            <property name="classes" value="java.lang.Boolean, java.lang.String"/>
+        </module>
+        <module name="InnerAssignment"/>
+        <module name="MagicNumber"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="ModifiedControlVariable"/>
+        <!-- We shouldn't really be using duplicate strings, however, lots of times we use them in logging, so that's why we disable this ... for now
+        <module name="MultipleStringLiterals">
+            <property name="ignoreStringsRegexp" value='^(("")|("."))$'/>
+        </module>
+        -->
+        <module name="MultipleVariableDeclarations"/>
+        <module name="MutableException"/>
+        <module name="OneStatementPerLine"/>
+        <module name="ParameterAssignment"/>
+        <module name="ParameterNumber">
+            <property name="max" value="10"/>
+            <property name="tokens" value="METHOD_DEF, CTOR_DEF"/>
+        </module>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="StringLiteralEquality"/>
+        <module name="UpperEll"/>
+
+
+    </module>
+
+    <module name="UniqueProperties">
+        <property name="fileExtensions" value="properties"/>
+    </module>
+
+    <!-- Suppressions for unit testing code -->
+    <module name="SuppressionFilter">
+        <property name="file" value="${baseDir}/config/checkstyle/suppress.xml"/>
+    </module>
+</module>
+
+
