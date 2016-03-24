@@ -13,3 +13,6 @@ gradle-app.setting
 gradle
 gradlew
 gradlew.bat
+
+.idea/
+*.iml
