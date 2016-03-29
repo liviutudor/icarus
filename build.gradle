@@ -21,9 +21,14 @@ repositories {
 def baseDir = "${project(':').projectDir}"
 
 dependencies {
+    compile "com.google.inject:guice:$guiceVersion"
+    compile "com.google.inject.extensions:guice-servlet:$guiceVersion"
+    compile "com.sun.jersey.contribs:jersey-guice:$jerseyVersion"
+    compile "com.sun.jersey:jersey-server:$jerseyVersion"
+    compile "javax.ws.rs:jsr311-api:$jsr311Version"
     compile "org.slf4j:slf4j-api:$slf4JVersion"
 
-    //provided "javax.servlet:javax.servlet-api:$javaxServletVersion"
+    compile "javax.servlet:javax.servlet-api:$javaxServletVersion"
 
     testCompile "junit:junit:$junitVersion"
 }
@@ -38,13 +43,13 @@ checkstyle {
     toolVersion = "$checkstyleVersion"
     configProperties = checkStyleProps
     configFile = new File("$baseDir/config/checkstyle/checkstyle.xml")
-    showViolations = false // set to true to print to console too
-    ignoreFailures = true
+    showViolations = true // set to true to print to console too
+    ignoreFailures = false
 }
 
 // findbugs
 findbugs {
-    ignoreFailures = true
+    ignoreFailures = false
     excludeFilter = file("$baseDir/config/findbugs/excludeFilter.xml")
     toolVersion = "$findBugsVersion"
 }

@@ -11,6 +11,6 @@
     </filter-mapping>
 
     <listener>
-        <listener-class>com.netflix.server.base.lifecycle.BaseServerListener</listener-class>
+        <listener-class>icarus.server.IcarusServletContextListener</listener-class>
     </listener>
 </web-app>
