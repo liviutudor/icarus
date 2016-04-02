@@ -48,7 +48,7 @@ public class ImageServlet extends HttpServlet {
 
     @GET
     @Path("/jpg/{width}/{height}/{bgColor}/{fgColor}/{font}/{fontSize}/{text}")
-    @Produces("image/png")
+    @Produces("image/jpg")
     public Response getJpg(@PathParam("width") int width, @PathParam("height") int height, @PathParam("bgColor") String bgColor, @PathParam("fgColor") String fgColor,
                            @PathParam("font") String font, @PathParam("fontSize") int fontSize, @PathParam("text") String text) {
         try {
