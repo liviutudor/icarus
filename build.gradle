@@ -30,7 +30,11 @@ dependencies {
 
     compile "javax.servlet:javax.servlet-api:$javaxServletVersion"
 
+    testCompile "cglib:cglib-nodep:$cgLibVersion"
     testCompile "junit:junit:$junitVersion"
+    testCompile "org.objenesis:objenesis:$objenesisVersion"
+    testCompile "org.spockframework:spock-core:$spockVersion"
+
 }
 
 dependencyLock {
