@@ -16,6 +16,7 @@ buildscript {
     }
 }
 apply plugin: 'console'
+apply plugin: 'github'
 apply plugin: 'release'
 
 repositories {
