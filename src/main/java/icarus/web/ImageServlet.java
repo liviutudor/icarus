@@ -7,17 +7,16 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
-import static icarus.Icarus.BASE_HEX;
-import static icarus.Icarus.FORMAT_JPG;
-import static icarus.Icarus.FORMAT_PNG;
+import static icarus.Icarus.*;
 
 /**
  * Our image servlet.
@@ -28,9 +27,12 @@ import static icarus.Icarus.FORMAT_PNG;
 @Path("/")
 public class ImageServlet extends HttpServlet {
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getHello() {
-        return "hello";
+    public Response getHello() {
+        try {
+            return Response.temporaryRedirect(new URI("/png/300/300/ffffff/000000/Tahoma/36/Hello%20World")).build();
+        } catch (URISyntaxException e) {
+            return Response.serverError().build();
+        }
     }
 
     @GET
