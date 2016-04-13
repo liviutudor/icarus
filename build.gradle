@@ -97,12 +97,13 @@ release {
     }
     */
 
-    /* Spec for next version. As above, asking user input.
+    /* Spec for next version. As above, asking user input.*/
     next {
-        version = { console.prompt(' > Please enter next version:', project.version) }
-        commitMessage = { "Release ${project.version}" }
+        //version = { console.prompt(' > Please enter next version:', project.release.version) }
+        version = "${project.release.version}-SNAPSHOT"
+        println "Using next version $project.release.next.version"
+        commitMessage = { "Release ${project.release.next.version}" }
     }
-    */
 
     /* Tasks that needs to be performed during release. Will be done after tag step. */
 }
