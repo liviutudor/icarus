@@ -100,7 +100,7 @@ release {
     /* Spec for next version. As above, asking user input. */
     next {
         version = { console.prompt(' > Please enter next version:', project.version) }
-        commitMessage = { "Release $project.version" }
+        commitMessage = { "Release ${project.version}" }
     }
 
     /* Tasks that needs to be performed during release. Will be done after tag step. */
