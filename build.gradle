@@ -86,8 +86,8 @@ release {
 
     /* Ask user for a release version, suggesting some default variant. */
     version = { console.prompt(' > Please enter release version:', project.version - '-SNAPSHOT') }
-    tag = { "r$project.version" }
-    commitMessage = { "Release $project.version" }
+    tag = { "r$project.release.version" }
+    commitMessage = { "Release $project.release.version" }
 
     /* Files and projects that needs to be updated with a new release version.
     update {
