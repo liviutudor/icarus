@@ -40,3 +40,6 @@ Example of urls:
 * http://img.liviutudor.com/jpg/300/250/000000/ffffff/Courier+New/72/I+Like+Icarus -- will create JPEG image, 300px width and 250 px height, black (0x000000) background with white (0xFFFFFF) text, in *Courier New* font, 72px tall which reads *I Like Icarus*
  
 
+## Release
+
+The release process is half-manual now as we use the [github-release-gradle-plugin](https://github.com/trnl/github-release-gradle-plugin). However it does creates releases in github, but it doesn't increment the version number.
