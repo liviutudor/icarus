@@ -23,6 +23,11 @@ repositories {
     jcenter()
 }
 
+group = 'liviutudor'
+version = '0.0.1'
+sourceCompatibility=1.7
+targetCompatibility=1.7
+
 def baseDir = "${project(':').projectDir}"
 
 dependencies {
@@ -94,8 +99,8 @@ release {
 
     /* Spec for next version. As above, asking user input. */
     next {
-        version = { console.prompt(' > Please enter next version:', bumpVersion(project.release.version)) }
-        commitMessage = { "Bumping version to $project.release.next.version" }
+        version = { console.prompt(' > Please enter next version:', project.version) }
+        commitMessage = { "Release $project.version" }
     }
 
     /* Tasks that needs to be performed during release. Will be done after tag step. */
