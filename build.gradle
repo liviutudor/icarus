@@ -24,7 +24,7 @@ repositories {
 }
 
 group = 'liviutudor'
-version = '0.0.1'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility=1.7
 targetCompatibility=1.7
 
@@ -86,8 +86,8 @@ release {
 
     /* Ask user for a release version, suggesting some default variant. */
     version = { console.prompt(' > Please enter release version:', project.version - '-SNAPSHOT') }
-    tag = { "r$project.release.version" }
-    commitMessage = { "Release $project.release.version" }
+    tag = { "r$project.version" }
+    commitMessage = { "Release ${project.version}" }
 
     /* Files and projects that needs to be updated with a new release version.
     update {
@@ -97,11 +97,12 @@ release {
     }
     */
 
-    /* Spec for next version. As above, asking user input. */
+    /* Spec for next version. As above, asking user input.
     next {
         version = { console.prompt(' > Please enter next version:', project.version) }
         commitMessage = { "Release ${project.version}" }
     }
+    */
 
     /* Tasks that needs to be performed during release. Will be done after tag step. */
 }
